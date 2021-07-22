@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</title>
+</head>
+<body>
+<input type="text" id="kytu" onkeyup="checkcharater(this.value)">
+<script>
+
+  function checkcharater(kytu) {
+    let a = "1234567890qwertyuiopasdfghjklzxcvbnm,./[];'|}{";
+    for (const charater of a) {
+      if(kytu == '1' || kytu == '2' ||kytu == '3' ||kytu == '4' ||kytu == '5' ||kytu == '6' ||kytu == '7' ||kytu == '8' ||kytu == '9' ||kytu == '0'){
+        document.getElementById("kytu").value ="";
+        return alert("Đây là ký tự số !!");
+      }else {
+        document.getElementById("kytu").value ="";
+        return alert("Đây không phải ký tự số !!")
+      }
+    }
+  }
+</script>
+</body>
+</html>

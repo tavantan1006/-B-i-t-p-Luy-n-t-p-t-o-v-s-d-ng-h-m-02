@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng
+        không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </title>
+</head>
+<body>
+<input type="text" id="giatri" oninput="check()">
+<p id="ketqua"></p>
+<p id="ketqua1"></p>
+<script>
+    let a = +prompt("Nhấp số phần tử mảng : ");
+    let stringCharater = "QWERTYUIOPASDFGHJKLZXCVBNM1234567890qwertyuiopasdfghjklzxcvbnm";
+    let lengthCharater = stringCharater.length;
+    let arrayA = new Array(a);
+    for (let i = 0; i < a; i++) {
+        arrayA[i] = stringCharater.charAt(Math.floor(Math.random() * lengthCharater));
+    }
+    document.getElementById("ketqua").innerText = arrayA;
+
+    function check() {
+        let character = document.getElementById("giatri").value;
+        let count = 0;
+        for (let i = 0; i < arrayA.length; i++) {
+            if (character == arrayA[i]){
+                count ++;
+            }
+        }
+        if (count==0){
+            document.getElementById("ketqua1").innerText = "Không xuất hiện";
+        }else {
+            document.getElementById("ketqua1").innerText = "Ký tự xuất hiện " + count+" lần";
+        }
+    }
+
+</script>
+</body>
+</html>
